@@ -6,7 +6,7 @@ from dbhelper import *
 
 def main():
 	
-	subprocess.call("sed -i 's/\r$//' get_db.sh", shell=True)
+	subprocess.call("sed -i 's/\r$//' get_db.sh", shell=True) # fix spurious \r characters caused by some windows text editors
 	subprocess.call('bash get_db.sh', shell=True)
 	runSQLFromFile('lahmanready.sql')
 	
@@ -14,7 +14,3 @@ def main():
 	
 if __name__ == "__main__":
 	main()
-'''
-use the following command to fix spurious \r characters caused by some windows text editors
-sed -i 's/\r$//' get_db.sh
-'''
