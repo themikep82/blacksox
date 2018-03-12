@@ -3,6 +3,7 @@ Welcome to the Ninja Blacksox Project, a baseball data project intended to unite
 All loaders require two files from this project:
 
 credentials.py -- A file containing AWS credentials for Redshift and other services
+
 dbhelper.py -- includes several functions for working with Redshift and AWS
 
 1. Sean Lahman Baseball Database
