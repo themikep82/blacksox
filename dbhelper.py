@@ -42,6 +42,16 @@ def runSQLFromFile(fileName):
 
 		if any(char.isalpha() for char in query): #ignore empty queries
 			executeSQL(query)
+			
+def SQLtoDataFrame(query):
+
+	if DEBUG:	
+		print(query)
+		
+	cur.execute(query)
+	con.commit()
+	
+	return pandas.DataFrame(cur.fetchall())
 
 def dotZeroBugFix(dataFrame):
 	#call this on pandas dataframes you are trying to load into redshift but dump into stl_load_errors because of a trailing '.0' on integer values
