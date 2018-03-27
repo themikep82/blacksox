@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS statcast.pitch_events (
 	batter_id INTEGER,
 	pitcher_id INTEGER,
 	event VARCHAR(50),
-	description VARCHAR(20),
+	description VARCHAR(30),
 	location_zone INTEGER,
 	game_type VARCHAR(2),
 	batter_hand VARCHAR(2),
