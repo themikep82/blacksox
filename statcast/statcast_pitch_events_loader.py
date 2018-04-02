@@ -6,7 +6,7 @@ from time import sleep
 from datetime import datetime, timedelta
 from slackclient import SlackClient
 sys.path.append("..")
-
+ 
 from dbhelper import *
 
 SLACK_ENABLED=1
@@ -21,8 +21,7 @@ def main():
 		sc.api_call(
 			"chat.postMessage",
 			channel="#dataimport",
-			text="Data Import Started!",
-			user="U945VE14N")
+			text="Data Import Started!")
 		
 	dateWindow=START_DATE
 	
@@ -54,8 +53,7 @@ def main():
 					sc.api_call(
 						"chat.postMessage",
 						channel="#dataimport",
-						text="ValueError. Retrying in 5 seconds",
-						user="U945VE14N")
+						text="ValueError. Retrying in 5 seconds")
 			
 					sleep(5)
 							
@@ -65,8 +63,7 @@ def main():
 					sc.api_call(
 						"chat.postMessage",
 						channel="#dataimport",
-						text=str(e),
-						user="U945VE14N")
+						text=str(e))
 						
 					break
 		
@@ -78,8 +75,7 @@ def main():
 		sc.api_call(
 			"chat.postMessage",
 			channel="#dataimport",
-			text="Data Import Complete!",
-			user="U945VE14N")
+			text="Data Import Complete!")
 
 def initTable():
 	#create statcast events table
