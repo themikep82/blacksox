@@ -29,7 +29,7 @@ def main():
 	
 	while dateWindow <= END_DATE:
 	
-		if dateWindow.month in [11]: #ignore January, February, December
+		if dateWindow.month not in [1, 2, 12]: #ignore January, February, December
 	
 			print(dateWindow.strftime('%Y-%m-%d'))
 			
