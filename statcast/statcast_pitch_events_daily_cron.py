@@ -11,7 +11,7 @@ from dbhelper import *
 
 SLACK_ENABLED=1
 
-QUERY_DATE=datetime.today() + timedelta(days=-1)
+QUERY_DATE=datetime.today() + timedelta(days=-1) #get yesterdays date
 
 def main():
 

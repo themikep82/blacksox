@@ -10,5 +10,3 @@ dbhelper.py -- includes several functions for working with Redshift and AWS
   Simply download the lahman directory and its contents and run 'python lahmanloader.py' from the command line. It will curl the zipped lahman sql file and load it all into it's own schema.
 
 2. Statcast data collected from Baseball Savant CSV downloads. I use code from the excellent https://github.com/jldbc/pybaseball
-   
-   Still need to clean up some NUMERIC precision issues.
