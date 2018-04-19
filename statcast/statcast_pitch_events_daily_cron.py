@@ -40,7 +40,7 @@ def main():
 				
 				os.remove('statcast_ready' + dateWindow.strftime('%Y-%m-%d') +'.csv')
 						
-		except ValueException as e:
+		except Exception as e:
 			
 			if SLACK_ENABLED:
 				sc.api_call(
@@ -59,6 +59,9 @@ def cleanData(pitchEventData):
 	#remove deprecated data and large 'des' column
 	pitchEventData=pitchEventData.drop(['spin_dir','spin_rate_deprecated','break_angle_deprecated','break_length_deprecated','des','tfs_deprecated','tfs_zulu_deprecated'], axis=1)
 	
+	#remove new columns
+	pitchEventData=pitchEventData.drop(['pitch_name', 'home_score', 'away_score', 'bat_score', 'fld_score', 'post_away_score', 'post_home_score', 'post_bat_score', 'post_fld_score'], axis=1)
+	
 	#fix duplicate pos2_person_id column
 	pitchEventData=pitchEventData.drop(['pos2_person_id'], axis=1)
 	pitchEventData.rename(columns={'pos2_person_id.1':'pos2_person_id'}, inplace=True)
@@ -70,6 +73,23 @@ def cleanData(pitchEventData):
 	pitchEventData['on_3b']=dotZeroBugFix(pitchEventData['on_3b'])
 	pitchEventData['on_2b']=dotZeroBugFix(pitchEventData['on_2b'])
 	pitchEventData['on_1b']=dotZeroBugFix(pitchEventData['on_1b'])
+	pitchEventData['zone']=dotZeroBugFix(pitchEventData['zone'])
+	pitchEventData['hit_distance_sc']=dotZeroBugFix(pitchEventData['hit_distance_sc'])
+	pitchEventData['release_spin_rate']=dotZeroBugFix(pitchEventData['release_spin_rate'])
+	pitchEventData['pos1_person_id']=dotZeroBugFix(pitchEventData['pos1_person_id'])
+	pitchEventData['pos2_person_id']=dotZeroBugFix(pitchEventData['pos2_person_id'])
+	pitchEventData['pos3_person_id']=dotZeroBugFix(pitchEventData['pos3_person_id'])
+	pitchEventData['pos4_person_id']=dotZeroBugFix(pitchEventData['pos4_person_id'])
+	pitchEventData['pos5_person_id']=dotZeroBugFix(pitchEventData['pos5_person_id'])
+	pitchEventData['pos6_person_id']=dotZeroBugFix(pitchEventData['pos6_person_id'])
+	pitchEventData['pos7_person_id']=dotZeroBugFix(pitchEventData['pos7_person_id'])
+	pitchEventData['pos8_person_id']=dotZeroBugFix(pitchEventData['pos8_person_id'])
+	pitchEventData['pos9_person_id']=dotZeroBugFix(pitchEventData['pos9_person_id'])
+	pitchEventData['babip_value']=dotZeroBugFix(pitchEventData['babip_value'])
+	pitchEventData['iso_value']=dotZeroBugFix(pitchEventData['iso_value'])
+	pitchEventData['launch_speed_angle']=dotZeroBugFix(pitchEventData['launch_speed_angle'])
+	pitchEventData['hit_location']=dotZeroBugFix(pitchEventData['hit_location'])
+
 	
 	return pitchEventData
 	
