@@ -9,7 +9,7 @@ sys.path.append("..")
  
 from dbhelper import *
 
-SLACK_ENABLED=1
+SLACK_ENABLED=0
 
 START_DATE=datetime(2008, 3, 1)
 END_DATE=datetime.today()

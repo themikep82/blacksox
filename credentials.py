@@ -1,5 +1,5 @@
-credentials =	{'user'				:	'YourRedshiftUsernameHere',
-				'database'			:	'YourRedshiftDBNameHere',
-				'host'				:	'YourRedshiftHostURLHere',
+credentials =	{'user'				:	'YourPostgresUsernameHere',
+				'database'			:	'YourPostgresDBNameHere',
+				'host'				:	'YourPostgresHostURLHere',
 				'port'				:	'5439',
-				'password'			:	'YourRedshiftPasswordHere'}
+				'password'			:	'YourPostgresPasswordHere'}
